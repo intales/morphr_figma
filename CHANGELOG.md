@@ -1,3 +1,7 @@
+## 7.3.4
+
+- Fixed missing exports from `effects.dart` and `type_style.dart`
+
 ## 7.3.3
 
 - Export all model classes ([@donny-dont](https://github.com/donny-dont))
