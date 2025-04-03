@@ -1,4 +1,4 @@
-import 'package:figma/figma.dart';
+import 'package:morphr_figma/morphr_figma.dart';
 
 void main() async {
   final token = String.fromEnvironment('FIGMA_TOKEN');

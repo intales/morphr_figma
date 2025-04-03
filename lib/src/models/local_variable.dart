@@ -1,8 +1,8 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:equatable/equatable.dart';
-import 'package:figma/src/models/resolved_type.dart';
-import 'package:figma/src/models/variable_code_syntax_platform.dart';
-import 'package:figma/src/models/variable_scope.dart';
+import 'package:morphr_figma/src/models/resolved_type.dart';
+import 'package:morphr_figma/src/models/variable_code_syntax_platform.dart';
+import 'package:morphr_figma/src/models/variable_scope.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'local_variable.g.dart';

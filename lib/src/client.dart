@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:figma/figma.dart';
+import 'package:morphr_figma/morphr_figma.dart';
 import 'package:http/http.dart';
 import 'package:http2/http2.dart';
 

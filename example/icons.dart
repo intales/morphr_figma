@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:args/args.dart';
-import 'package:figma/figma.dart';
+import 'package:morphr_figma/morphr_figma.dart';
 import 'package:http/http.dart';
 
 /// This script downloads all icons from Figma and

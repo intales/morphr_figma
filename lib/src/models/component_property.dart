@@ -1,5 +1,5 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:figma/src/models/instance_swap_preferred_value.dart';
+import 'package:morphr_figma/src/models/instance_swap_preferred_value.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'component_property.g.dart';

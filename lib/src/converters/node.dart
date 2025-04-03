@@ -1,4 +1,4 @@
-import 'package:figma/src/models.dart';
+import 'package:morphr_figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 /// Converts a JSON decoded object to a [Node] specific instance regarding

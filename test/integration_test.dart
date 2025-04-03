@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:figma/figma.dart';
+import 'package:morphr_figma/morphr_figma.dart';
 import 'package:test/test.dart';
 
 void main() {
