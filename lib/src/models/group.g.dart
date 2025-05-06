@@ -67,6 +67,8 @@ abstract class _$GroupCWProxy {
 
   Group layoutGrow(double layoutGrow);
 
+  Group layoutWrap(LayoutWrap layoutWrap);
+
   Group styles(Map<StyleTypeKey, String>? styles);
 
   Group componentPropertyReferences(
@@ -149,6 +151,7 @@ abstract class _$GroupCWProxy {
     Vector2D? size,
     bool preserveRatio,
     double layoutGrow,
+    LayoutWrap layoutWrap,
     Map<StyleTypeKey, String>? styles,
     Map<String, String>? componentPropertyReferences,
     SizeRectangle? absoluteBoundingBox,
@@ -284,6 +287,9 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
   Group layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
 
   @override
+  Group layoutWrap(LayoutWrap layoutWrap) => this(layoutWrap: layoutWrap);
+
+  @override
   Group styles(Map<StyleTypeKey, String>? styles) => this(styles: styles);
 
   @override
@@ -399,6 +405,7 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
     Object? size = const $CopyWithPlaceholder(),
     Object? preserveRatio = const $CopyWithPlaceholder(),
     Object? layoutGrow = const $CopyWithPlaceholder(),
+    Object? layoutWrap = const $CopyWithPlaceholder(),
     Object? styles = const $CopyWithPlaceholder(),
     Object? componentPropertyReferences = const $CopyWithPlaceholder(),
     Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
@@ -548,6 +555,10 @@ class _$GroupCWProxyImpl implements _$GroupCWProxy {
           ? _value.layoutGrow
           // ignore: cast_nullable_to_non_nullable
           : layoutGrow as double,
+      layoutWrap: layoutWrap == const $CopyWithPlaceholder()
+          ? _value.layoutWrap
+          // ignore: cast_nullable_to_non_nullable
+          : layoutWrap as LayoutWrap,
       styles: styles == const $CopyWithPlaceholder()
           ? _value.styles
           // ignore: cast_nullable_to_non_nullable
@@ -715,6 +726,9 @@ Group _$GroupFromJson(Map<String, dynamic> json) => Group(
           : Vector2D.fromJson(json['size'] as Map<String, dynamic>),
       preserveRatio: json['preserveRatio'] as bool? ?? false,
       layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
+      layoutWrap:
+          $enumDecodeNullable(_$LayoutWrapEnumMap, json['layoutWrap']) ??
+              LayoutWrap.noWrap,
       styles: (json['styles'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
       ),
@@ -826,6 +840,7 @@ Map<String, dynamic> _$GroupToJson(Group instance) => <String, dynamic>{
       'isMaskOutline': instance.isMaskOutline,
       'styles': instance.styles
           ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
+      'layoutWrap': _$LayoutWrapEnumMap[instance.layoutWrap]!,
     };
 
 const _$LayoutPositioningEnumMap = {
@@ -863,6 +878,11 @@ const _$PrimaryAxisAlignItemsEnumMap = {
 const _$PrimaryAxisSizingModeEnumMap = {
   PrimaryAxisSizingMode.fixed: 'FIXED',
   PrimaryAxisSizingMode.auto: 'AUTO',
+};
+
+const _$LayoutWrapEnumMap = {
+  LayoutWrap.noWrap: 'NO_WRAP',
+  LayoutWrap.wrap: 'WRAP',
 };
 
 const _$StyleTypeKeyEnumMap = {

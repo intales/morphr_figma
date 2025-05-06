@@ -107,3 +107,4 @@ export 'models/vector.dart' show Vector;
 export 'models/vector_2d.dart' show Vector2D;
 export 'models/vector_2d.dart';
 export 'models/version.dart' show Version;
+export 'models/layout_wrap.dart' show LayoutWrap;

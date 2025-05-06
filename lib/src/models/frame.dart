@@ -2,7 +2,6 @@ import 'package:morphr_figma/src/converters/converters.dart';
 import 'package:morphr_figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:morphr_figma/src/models/layout_wrap.dart';
 
 part 'frame.g.dart';
 

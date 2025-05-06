@@ -40,6 +40,7 @@ class ComponentNode extends Frame {
     required super.paddingTop,
     required super.size,
     required this.componentPropertyDefinitions,
+    required super.layoutWrap,
     super.styles,
     super.componentPropertyReferences,
     super.absoluteBoundingBox,

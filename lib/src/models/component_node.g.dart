@@ -70,6 +70,8 @@ abstract class _$ComponentNodeCWProxy {
   ComponentNode componentPropertyDefinitions(
       Map<String, ComponentPropertyDefinition> componentPropertyDefinitions);
 
+  ComponentNode layoutWrap(LayoutWrap layoutWrap);
+
   ComponentNode styles(Map<StyleTypeKey, String>? styles);
 
   ComponentNode componentPropertyReferences(
@@ -155,6 +157,7 @@ abstract class _$ComponentNodeCWProxy {
     double paddingTop,
     Vector2D? size,
     Map<String, ComponentPropertyDefinition> componentPropertyDefinitions,
+    LayoutWrap layoutWrap,
     Map<StyleTypeKey, String>? styles,
     Map<String, String>? componentPropertyReferences,
     SizeRectangle? absoluteBoundingBox,
@@ -300,6 +303,10 @@ class _$ComponentNodeCWProxyImpl implements _$ComponentNodeCWProxy {
       this(componentPropertyDefinitions: componentPropertyDefinitions);
 
   @override
+  ComponentNode layoutWrap(LayoutWrap layoutWrap) =>
+      this(layoutWrap: layoutWrap);
+
+  @override
   ComponentNode styles(Map<StyleTypeKey, String>? styles) =>
       this(styles: styles);
 
@@ -429,6 +436,7 @@ class _$ComponentNodeCWProxyImpl implements _$ComponentNodeCWProxy {
     Object? paddingTop = const $CopyWithPlaceholder(),
     Object? size = const $CopyWithPlaceholder(),
     Object? componentPropertyDefinitions = const $CopyWithPlaceholder(),
+    Object? layoutWrap = const $CopyWithPlaceholder(),
     Object? styles = const $CopyWithPlaceholder(),
     Object? componentPropertyReferences = const $CopyWithPlaceholder(),
     Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
@@ -578,6 +586,10 @@ class _$ComponentNodeCWProxyImpl implements _$ComponentNodeCWProxy {
               // ignore: cast_nullable_to_non_nullable
               : componentPropertyDefinitions
                   as Map<String, ComponentPropertyDefinition>,
+      layoutWrap: layoutWrap == const $CopyWithPlaceholder()
+          ? _value.layoutWrap
+          // ignore: cast_nullable_to_non_nullable
+          : layoutWrap as LayoutWrap,
       styles: styles == const $CopyWithPlaceholder()
           ? _value.styles
           // ignore: cast_nullable_to_non_nullable
@@ -760,6 +772,9 @@ ComponentNode _$ComponentNodeFromJson(Map<String, dynamic> json) =>
                         e as Map<String, dynamic>)),
               ) ??
               {},
+      layoutWrap:
+          $enumDecodeNullable(_$LayoutWrapEnumMap, json['layoutWrap']) ??
+              LayoutWrap.noWrap,
       styles: (json['styles'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry($enumDecode(_$StyleTypeKeyEnumMap, k), e as String),
       ),
@@ -874,6 +889,7 @@ Map<String, dynamic> _$ComponentNodeToJson(ComponentNode instance) =>
       'isMaskOutline': instance.isMaskOutline,
       'styles': instance.styles
           ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
+      'layoutWrap': _$LayoutWrapEnumMap[instance.layoutWrap]!,
       'componentPropertyDefinitions': instance.componentPropertyDefinitions,
     };
 
@@ -912,6 +928,11 @@ const _$PrimaryAxisAlignItemsEnumMap = {
 const _$PrimaryAxisSizingModeEnumMap = {
   PrimaryAxisSizingMode.fixed: 'FIXED',
   PrimaryAxisSizingMode.auto: 'AUTO',
+};
+
+const _$LayoutWrapEnumMap = {
+  LayoutWrap.noWrap: 'NO_WRAP',
+  LayoutWrap.wrap: 'WRAP',
 };
 
 const _$StyleTypeKeyEnumMap = {
