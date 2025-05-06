@@ -1,3 +1,7 @@
+## 7.4.0
+
+- Added support for wrap layout mode
+
 ## 7.3.4
 
 - Fixed missing exports from `effects.dart` and `type_style.dart`

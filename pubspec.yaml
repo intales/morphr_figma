@@ -1,6 +1,6 @@
 name: morphr_figma
 description: A Figma API wrapper library for interacting with Figma documents, written in pure Dart.
-version: 7.3.4
+version: 7.4.0
 homepage: https://github.com/intales/morphr_figma
 repository: https://github.com/intales/morphr_figma
 issue_tracker: https://github.com/intales/morphr_figma/issues
