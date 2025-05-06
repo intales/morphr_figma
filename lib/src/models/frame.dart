@@ -2,6 +2,7 @@ import 'package:morphr_figma/src/converters/converters.dart';
 import 'package:morphr_figma/src/models.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:morphr_figma/src/models/layout_wrap.dart';
 
 part 'frame.g.dart';
 
@@ -210,6 +211,10 @@ class Frame extends Node {
   /// style in the top-level styles field.
   final Map<StyleTypeKey, String>? styles;
 
+  /// Whether this auto-layout frame has wrapping enabled.
+  @JsonKey(defaultValue: LayoutWrap.noWrap)
+  final LayoutWrap layoutWrap;
+
   Frame({
     required super.id,
     required super.visible,
@@ -246,6 +251,7 @@ class Frame extends Node {
     required this.strokesIncludedInLayout,
     required this.preserveRatio,
     required this.layoutGrow,
+    required this.layoutWrap,
     this.absoluteBoundingBox,
     this.absoluteRenderBounds,
     this.size,

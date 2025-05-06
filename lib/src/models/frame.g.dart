@@ -78,6 +78,8 @@ abstract class _$FrameCWProxy {
 
   Frame layoutGrow(double layoutGrow);
 
+  Frame layoutWrap(LayoutWrap layoutWrap);
+
   Frame absoluteBoundingBox(SizeRectangle? absoluteBoundingBox);
 
   Frame absoluteRenderBounds(SizeRectangle? absoluteRenderBounds);
@@ -154,6 +156,7 @@ abstract class _$FrameCWProxy {
     bool strokesIncludedInLayout,
     bool preserveRatio,
     double layoutGrow,
+    LayoutWrap layoutWrap,
     SizeRectangle? absoluteBoundingBox,
     SizeRectangle? absoluteRenderBounds,
     Vector2D? size,
@@ -302,6 +305,9 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
   Frame layoutGrow(double layoutGrow) => this(layoutGrow: layoutGrow);
 
   @override
+  Frame layoutWrap(LayoutWrap layoutWrap) => this(layoutWrap: layoutWrap);
+
+  @override
   Frame absoluteBoundingBox(SizeRectangle? absoluteBoundingBox) =>
       this(absoluteBoundingBox: absoluteBoundingBox);
 
@@ -404,6 +410,7 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
     Object? strokesIncludedInLayout = const $CopyWithPlaceholder(),
     Object? preserveRatio = const $CopyWithPlaceholder(),
     Object? layoutGrow = const $CopyWithPlaceholder(),
+    Object? layoutWrap = const $CopyWithPlaceholder(),
     Object? absoluteBoundingBox = const $CopyWithPlaceholder(),
     Object? absoluteRenderBounds = const $CopyWithPlaceholder(),
     Object? size = const $CopyWithPlaceholder(),
@@ -569,6 +576,10 @@ class _$FrameCWProxyImpl implements _$FrameCWProxy {
           ? _value.layoutGrow
           // ignore: cast_nullable_to_non_nullable
           : layoutGrow as double,
+      layoutWrap: layoutWrap == const $CopyWithPlaceholder()
+          ? _value.layoutWrap
+          // ignore: cast_nullable_to_non_nullable
+          : layoutWrap as LayoutWrap,
       absoluteBoundingBox: absoluteBoundingBox == const $CopyWithPlaceholder()
           ? _value.absoluteBoundingBox
           // ignore: cast_nullable_to_non_nullable
@@ -721,6 +732,9 @@ Frame _$FrameFromJson(Map<String, dynamic> json) => Frame(
           json['strokesIncludedInLayout'] as bool? ?? false,
       preserveRatio: json['preserveRatio'] as bool? ?? false,
       layoutGrow: (json['layoutGrow'] as num?)?.toDouble() ?? 0.0,
+      layoutWrap:
+          $enumDecodeNullable(_$LayoutWrapEnumMap, json['layoutWrap']) ??
+              LayoutWrap.noWrap,
       absoluteBoundingBox: json['absoluteBoundingBox'] == null
           ? null
           : SizeRectangle.fromJson(
@@ -826,6 +840,7 @@ Map<String, dynamic> _$FrameToJson(Frame instance) => <String, dynamic>{
       'isMaskOutline': instance.isMaskOutline,
       'styles': instance.styles
           ?.map((k, e) => MapEntry(_$StyleTypeKeyEnumMap[k]!, e)),
+      'layoutWrap': _$LayoutWrapEnumMap[instance.layoutWrap]!,
     };
 
 const _$PrimaryAxisAlignItemsEnumMap = {
@@ -863,6 +878,11 @@ const _$OverflowDirectionEnumMap = {
 const _$LayoutPositioningEnumMap = {
   LayoutPositioning.auto: 'AUTO',
   LayoutPositioning.absolute: 'ABSOLUTE',
+};
+
+const _$LayoutWrapEnumMap = {
+  LayoutWrap.noWrap: 'NO_WRAP',
+  LayoutWrap.wrap: 'WRAP',
 };
 
 const _$StrokeAlignEnumMap = {
