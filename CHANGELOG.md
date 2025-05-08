@@ -1,3 +1,7 @@
+## 7.4.1
+
+- Fixed missing exports for constraints
+
 ## 7.4.0
 
 - Added support for wrap layout mode
