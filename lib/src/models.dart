@@ -28,7 +28,8 @@ export 'models/instance.dart' show Instance;
 export 'models/instance_swap_preferred_value.dart'
     show InstanceSwapPreferredValue;
 export 'models/layout_align.dart';
-export 'models/layout_constraint.dart' show LayoutConstraint;
+export 'models/layout_constraint.dart'
+    show LayoutConstraint, HorizontalConstraint, VerticalConstraint;
 export 'models/layout_grid.dart' show LayoutGrid;
 export 'models/layout_mode.dart';
 export 'models/layout_pattern.dart';
